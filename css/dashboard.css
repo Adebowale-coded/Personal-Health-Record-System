@@ -1,0 +1,573 @@
+*{
+    font-family: 'Varela Round', sans-serif;
+}
+:root{
+    --main-bg-color: rgb(20, 14, 50);
+    --main-text-color: rgb(20, 14, 50);
+    --second-text-color: #bbbec5;
+    --second-bg-color: #c1efde;
+}
+
+.primary-text{
+    color: var(--main-text-color);
+}
+
+.second-text{
+    color: var(--second-text-color);
+}
+
+.primary-bg{
+    background-color: var(--main-bg-color);
+}
+
+.secondary-bg{
+    background-color: var(--second-bg-color);
+}
+
+.rounded-full{
+    border-radius: 100%;
+}
+
+#wrapper{
+    overflow: hidden;
+    background-image: linear-gradient(
+        to right,
+        rgb(194, 190, 212),
+        rgb(255, 255, 255),
+        rgb(255, 255, 255),
+        rgb(255, 255, 255)
+    );
+}
+
+#sidebar-wrapper{
+    min-height: 100vh;
+    margin-left: -15rem;
+    transition: margin 0.25s ease-out;
+}
+
+#sidebar-wrapper .sidebar-heading{
+    padding: 0.875rem 1.25rem;
+    font-size: 1.2rem;
+}
+
+#sidebar-wrapper .list-group{
+    width :15rem;
+
+}
+
+#page-content-wrapper{
+    min-height: 100vw;
+}
+
+#wrapper.toggled #sidebar-wrapper{
+    margin-left: 0;
+}
+
+#menu-toggle{
+    cursor: pointer;
+}
+
+.list-group-item{
+    border: none;
+    padding: 20px 30px;
+}
+
+.list-group-item.active{
+    background-color: transparent;
+    color: var(--main-text-color);
+    font-weight: bold;
+    border: none;
+}
+
+@media (min-width: 768px){
+    #sidebar-wrapper{
+        margin-left: 0;
+    }
+
+    #page-content-wrapper{
+        min-width: 0;
+        width: 100%;
+    }
+
+    #wrapper.toggled #sidebar-wrapper{
+        margin-left: -15rem;
+    }
+}
+.container{
+    display: flex;
+}
+
+
+.box .col select[type="text"]{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid black;
+    padding: 10px;
+    background: transparent;
+    outline: none;
+    width: 70%;
+}
+
+.box .col input[type="text"]{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid black;
+    padding: 10px;
+    background: transparent;
+    outline: none;
+    width: 70%;
+}
+
+.box .col input[type="number"]{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid black;
+    padding: 10px;
+    background: transparent;
+    outline: none;
+    width: 70%;
+}
+
+@media(max-width: 700px){
+     
+}
+
+.card img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.grid-container{
+    margin: 0 auto;
+    max-width: 1100px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    padding-top: 5%;
+    line-height: 5px;
+ }
+
+ @media(max-width: 768px){
+    .grid-container{
+        grid-template-columns: repeat(1, 1fr);
+    }
+ }
+ @media(max-width: 991px){
+    .grid-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+ }
+ /*@media(max-width: 1024px){
+    
+ }*/
+
+ 
+ .grid-item{
+     box-shadow: 0 0 3px rgba(0,0,0,0.2);
+     background: white;
+ }
+ .grid-item:hover{
+    
+ }
+ 
+ .grid-item img{
+     display: block;
+     width: 100%;
+     height: auto;
+ }
+ .card-text{
+    text-align: left;
+ }
+ .card-text p{
+    text-align: left;
+ }
+ #btn{
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    max-width: 700px;
+    width: 100%;
+    background-color: rgb(223, 8, 126);
+    border: none;
+    outline: none;
+    color: #fff;  
+    margin: 25px 0;
+    border-radius: 15px;
+  }
+ 
+ .card-content{
+     line-height: 0.5;
+     font-size: 0.9em;
+     padding: 15px;
+ }
+ 
+
+ 
+ .container{
+     display: flex;
+     margin: 0 auto;
+    max-width: 1100px;
+ }
+ 
+ .container>div>img{
+     display: block;
+     width: 370px;
+     height: 227px;
+ }
+
+ /* top form */
+
+
+ /* chat box*/
+
+ *{
+  margin: 0;
+  padding: 0;
+ }
+
+ .show-btn{
+  position: absolute;
+  left: 90%;
+  top: 90%;
+  width: 90px;
+  height: 85px;
+  cursor: pointer;
+  border-radius: 70%;
+  text-align: center;
+  background: rgb(255, 1, 234);
+  color: white;
+ }
+
+ .show-btn{
+  margin: 15px 17px;
+  font-size: 60px;
+ }
+
+ input[type="checkbox"]{
+  display: none;
+ }
+
+ #show:checked ~ .wrapper{
+   display: block;
+ }
+
+ .wrapper{
+  display: none;
+  width: 320px;
+  height: 400px;
+  margin: 80px auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 10px 5px rgba(0,0,0,0.1);
+ }
+
+ h5{
+  color: #fff;
+  padding: 15px;
+  background: rgb(255, 1, 234);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+
+ }
+
+ p{
+  font-size: 13px;
+
+ }
+ form{
+  margin: 10px;
+  width: 270px;
+  padding: 20px 15px;
+  border-radius: 10px;
+  border: 1px solid rgb(236, 234, 234);
+
+ }
+
+ input{
+    display: block;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 5px 10px 5px 50px;
+    color: rgb(20, 14, 50);
+    margin-bottom: 10px;
+    border: 1px solid rgb(236, 234, 234);
+    display: block;
+ }
+
+ input::placeholder{
+  
+ }
+
+ #hello{
+  width: 100%;
+  padding: 8px;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  border-radius: 12px;
+  background: rgb(20, 14, 50);
+}
+input:focus{
+  border-color: rgb(20, 14, 50);
+}
+
+#hello:hover{
+  background: rgba(189, 23, 23, 0.5);
+}
+.wrapper{
+  animation: popup 1s;
+}
+
+@keyframes popup{
+  0%{
+    transform: scale(1.3);
+  }
+  50%{
+    transform: scale(1.3);
+  }
+  60%{
+    transform: scale(1.1);
+  }
+  70%{
+    transform: scale(1.2);
+  }
+  80%{
+    transform: scale(1);
+  }
+  90%{
+    transform: scale(1.1);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+
+.icons i{
+    font-size: 1.5em;
+}
+
+/* navbar new*/
+
+.btn-danger{
+    width: 100%;
+    height: 50px;
+}
+.btn-success{
+    width: 100%;
+}
+.navbar{
+    height: 60px;
+    background-color: rgb(20, 14, 50);
+    
+    align-items: center;
+    justify-content: space-between;
+}
+
+#hop{
+    background: green;
+    outline: none;
+    color: white;
+    font-size: 15px;
+}
+
+.pad{
+    outline: none;
+}
+
+.mx-auto li{
+    padding: 10px;
+    
+}
+#hi{
+    width: 30%;
+    outline: 1px solid black;
+    
+}
+.girl{
+    background: rgb(20, 14, 50);
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    width: 2%;
+}
+
+#span{
+    display: inline;
+    
+}
+
+.orange{
+    width: 33.3%;
+    background: orangered;
+    margin-left: 20px;
+    padding: 20px;
+}
+
+.class{
+    display: flex;
+}
+
+
+.ye{
+    padding: 10px;
+    background: green;
+    color: white;
+    text-decoration: none;
+}
+.ye:hover{
+    color: white;
+}
+/* another navbar*/
+
+.how{
+    background:rgb(194, 190, 212);
+}
+.collapse .navbar .one{
+    text-align: left;
+}
+
+.div{
+    text-align:  center;
+}
+
+/* eidt profile css */
+
+.oil{
+    text-align: left;
+    border: 1px solid black;
+    padding-left: 90px;
+}
+
+.basis h6{
+    font-size: 20px;
+}
+
+.form input[type="text"]{
+    width: 300px;
+    border: 1px solid black;
+}
+
+.form span{
+    display: flex; 
+}
+
+.form span a{
+    text-decoration: none;
+    padding: 5px;
+    background: purple;
+    height: 40px;
+    color: white;
+    width: 70px;
+}
+
+.form .fly a{
+   
+}
+
+.parent{
+    display: flex;
+    
+    width: 80%;
+}
+
+.parent .child{
+    flex-basis: 13.3%;
+}
+
+.parent .child .input-field select[name="user_type"]{
+    padding: 10px;
+    width: 90%
+}
+
+/* checkbox area */
+
+
+.image{
+    
+}
+
+.image p{
+    width: 20%;
+    margin: 0 auto;
+}
+
+.terk i{
+    font-size: 50px;
+}
+
+.terk a{
+    background: rgb(20, 14, 50);
+    width: 200px;
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+    border-radius: 0px 0px 5px 5px;
+}
+
+.terk{
+    transform: translateY(-40px);
+}
+
+.terk i{
+    cursor: pointer;
+}
+
+.terk .second-btn{
+    width: 50px;
+    border-radius: 5px;
+    background: black;
+}
+
+/* hearts */
+.heart{
+    color: black;
+    font-size: 25px;
+}
+.cons{
+    display: flex;
+    width: 20%;
+    margin: 0 auto;
+    border-top: 1px solid black;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    padding-left: 20px;
+}
+
+.cons .cam{
+    padding-left: 100px;
+    font-size: 25px;
+}
+
+.tag{
+    background: rgb(20, 14, 50);
+    color: white;
+    width: 50%;
+    margin: 0 auto;
+    height: 60px;
+}
+
+.class p{
+    width: 100%;
+    padding-top: 10px;
+}
+.tag .atag{
+    border-radius: 5px;
+    background: black;
+    margin: 0 auto;
+    transform: translateY(80%);
+    padding: 10px;
+    width: 50%;
+}
+.atag a{
+    text-decoration: none;
+    color: white;
+}
