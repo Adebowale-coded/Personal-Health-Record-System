@@ -1,3 +1,31 @@
+<?php
+if (isset($_POST['register'])) {
+	$name = $_POST['fullname'];
+	$email = $_POST['email'];
+	$password = $_POST['password'];
+
+	require("dbconn.php");
+
+	$result = mysqli_query($con, "INSERT INTO `users`(`fullname`, `email`, `password`) VALUES ('$name','$email','$password')");
+
+	if($result) {
+		?>
+		<script>
+			alert("Registration Successful");
+			window.location.href = 'login.php'
+		</script>
+		<?php
+	}else {
+		?>
+		<script>
+			alert("An error occured");
+		</script>
+		<?php
+	}
+}
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,12 +44,12 @@
 				<h2>Register</h2>
 				<div class="form-row">
 					<label for="full-name">Full Name</label>
-					<input type="text" name="full-name" id="full-name" class="input-text" placeholder="Your Name" required>
+					<input type="text" name="fullname" id="full-name" class="input-text" placeholder="Your Name" required>
 					<i class="fas fa-user"></i>
 				</div>
 				<div class="form-row">
 					<label for="your-email">Your Email</label>
-					<input type="text" name="your-email" id="your-email" class="input-text" placeholder="Your Email" required>
+					<input type="text" name="email" id="your-email" class="input-text" placeholder="Your Email" required>
 					<i class="fas fa-envelope"></i>
 				</div>
 				<div class="form-row">
