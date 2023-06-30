@@ -50,7 +50,7 @@ if (isset($_POST['login'])) {
 
             <!--------------------------- Left Box ----------------------------->
 
-            <div class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box" style="background: #103cbe;">
+            <div class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box" style="background: rgb(20, 14, 50);">
                 <div class="featured-image mb-3">
                     <img src="img/logo2.png" class="img-fluid" style="width: 100px; color: aliceblue;">
                 </div>
@@ -81,7 +81,7 @@ if (isset($_POST['login'])) {
                             </div>
                         </div>
                         <div class="input-group mb-3">
-                            <button class="btn btn-lg btn-primary w-100 fs-6" type="submit" name='login'>Login</button>
+                            <button class="btn btn-lg  w-100 fs-6" style="background: rgb(20, 14, 50); color: white;"type="submit" name='login'>Login</button>
                         </div>
                     </form>
 
