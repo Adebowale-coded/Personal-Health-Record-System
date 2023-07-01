@@ -56,11 +56,6 @@
                 <h2 class="fs-2 m-0">Hi Doc</h2>
             </div>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-            aria-expanded="false" aria-label="toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
         </nav>
 
         <!--After the dashboard nav-->
@@ -70,127 +65,35 @@
         </div>
 
 
-        <form class="container flex-column mt-5" style="width: 100%;">
-        <div class="heading" style="background: ; color: white; font-size: 10px;">
-            <h5>Basic Info</h5>
-        </div>        
-            <div class="mb-0">
-              <label  class="form-label" name="docname" >Doctor Name</label>
-              <input type="text" class="form-control" required>
+        <div class="row" style=" margin: 0 auto; text-align: center; width: 100%;">
+          <div class="col-sm-4" style=" ">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title" style="font-size: 15px;">Patients</h5>
+                <p class="card-text">22</p>
+                <a href="#" class="btn" style="width: 100%; background: rgb(31, 27, 46); color: white;">View</a>
+              </div>
             </div>
-            <div class="mb-0">
-              <label  class="form-label" name="">P/O</label>
-              <input type="text" class="form-control">
+          </div>
+          <div class="col-sm-4" style="">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title" style="font-size: 15px;">Appointment</h5>
+                <p class="card-text">10</p>
+                <a href="#" class="btn" style="width: 100%; background: rgb(31, 27, 46); color: white;">View</a>
+              </div>
             </div>
-
-            <div class="mb-0">
-              <label class="form-label" name="email">Email</label>
-              <input type="text" class="form-control" placeholder="@gmail.com" required>
+          </div>
+          <div class="col-sm-4" style="">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title" style="font-size: 15px;">Visits</h5>
+                <p class="card-text">10</p>
+                <a href="#" class="btn" style="width: 100%; background: rgb(31, 27, 46); color: white;">View</a>
+              </div>
             </div>
-
-            <div class="mb-0">
-              <label class="form-label" name="email">First Name</label>
-              <input type="text" class="form-control" required>
-            </div>
-
-            <div class="mb-0">
-              <label class="form-label" name="email">Last Name</label>
-              <input type="text" class="form-control" required>
-            </div>
-
-            <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
-          
-
-        <!--sECOND fORM--><!--sECOND fORM--><!--sECOND fORM--><!--sECOND fORM-->
-
-
-          <div class="container flex-column mt-2" style="width: 100%;">
-        <div class="heading" style="background: ; color: white; font-size: 10px;">
-            <h5>Personal Details</h5>
-        </div>        
-            <div class="mb-0">
-              <label  class="form-label" name="docname">Gender</label>
-              <input type="text" class="form-control" required>
-            </div>
-            <div class="mb-0">
-              <label class="form-label" name="">Birth Date</label>
-              <input type="text" class="form-control" placeholder="yyyy/mm/dd" required>
-
-
-
-
-              <!--<select class="form-select" aria-label="Default select example">
-                <option selected>Open this select menu</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-            </select>-->
-            </div>
-
-            <div class="mb-0">
-              <label  class="form-label" name="email">Occupation</label>
-              <input type="text" class="form-control" required>
-            </div>
-
-            <div class="mb-0">
-              <label class="form-label" name="email">Blood Group</label>
-              <input type="text" class="form-control" required>
-            </div>
-
-            <div class="mb-0">
-              <label class="form-label" name="email">Marital Status</label>
-              <input type="text" class="form-control" required>
-            </div>
-</div>
-
-
-
-          <div class="container flex-column mt-2" style="width: 100%;">
-        <div class="heading" style="background: ; color: white; font-size: 10px;">
-            <h5>Contact Details</h5>
-        </div>        
-            <div class="mb-0">
-              <label  class="form-label" name="docname">Home Address</label>
-              <input type="text" class="form-control" required>
-            </div>
-            <div class="mb-0">
-              <label class="form-label" name="">Current Address</label>
-              <input type="text" class="form-control" placeholder="" required>
-              <!--<select class="form-select" aria-label="Default select example">
-                <option selected>Open this select menu</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-            </select>-->
-            </div>
-
-            <div class="mb-0">
-              <label  class="form-label" name="email">Country</label>
-              <input type="text" class="form-control" required>
-            </div>
-
-            <div class="mb-0">
-              <label class="form-label" name="email">State/Province</label>
-              <input type="text" class="form-control" required>
-            </div>
-
-            <div class="mb-0">
-              <label class="form-label" name="email">City</label>
-              <input type="text" class="form-control" required>
-            </div>
-
-            <div class="mb-0">
-              <label class="form-label" name="email">Contact No</label>
-              <input type="text" class="form-control" required>
-            </div>
-
-            <div class="mb-0">
-              <label class="form-label" name="email">Ethnicity</label>
-              <input type="text" class="form-control" required>
-            </div>
-
-            <button type="submit" class="btn btn-primary">Save</button>
-          </form>
+          </div>
+        </div>
     </div>
 
 
