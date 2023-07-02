@@ -1,3 +1,11 @@
+<?php
+session_start();
+require("dbconn.php");
+$patient = mysqli_num_rows(mysqli_query($con, "SELECT * FROM `patient`"));
+$appointment = mysqli_num_rows(mysqli_query($con, "SELECT * FROM `appointment`"));
+$visitation = mysqli_num_rows(mysqli_query($con, "SELECT * FROM `visitation`"));
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,13 +39,13 @@
             <a href="#" class="list-group-item list-group-item-action bg-transparent second-text active text-white" >
                 <i class="fas fa-tachometer-alt me-2"></i>Dashboard
             </a>
-            <a href="#" class="list-group-item list-group-item-action bg-transparent second-text active text-white" >
+            <a href="addpatient.php" class="list-group-item list-group-item-action bg-transparent second-text active text-white" >
             <i class="fas fa-plus me-2"></i>Add Patient
             </a>
-            <a href="patientlist.html" class="list-group-item list-group-item-action bg-transparent second-text fw-bold text-white">
+            <a href="patientlist.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold text-white">
             <i class="fas fa-list me-2"></i>Patient List
             </a>
-            <a href="medhistory.html" class="list-group-item list-group-item-action bg-transparent second-text fw-bold text-white">
+            <a href="medhistory.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold text-white">
                 <i class="fas fa-chart-line me-2"></i>Medical History
             </a>
             <a href="" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold">
@@ -70,8 +78,8 @@
             <div class="card">
               <div class="card-body">
                 <h5 class="card-title" style="font-size: 15px;">Patients</h5>
-                <p class="card-text">22</p>
-                <a href="#" class="btn" style="width: 100%; background: rgb(31, 27, 46); color: white;">View</a>
+                <p class="card-text"><?php echo $patient ?></p>
+                <a href="patientlist.php" class="btn" style="width: 100%; background: rgb(31, 27, 46); color: white;">View</a>
               </div>
             </div>
           </div>
@@ -79,7 +87,7 @@
             <div class="card">
               <div class="card-body">
                 <h5 class="card-title" style="font-size: 15px;">Appointment</h5>
-                <p class="card-text">10</p>
+                <p class="card-text"><?php echo $appointment ?></p>
                 <a href="#" class="btn" style="width: 100%; background: rgb(31, 27, 46); color: white;">View</a>
               </div>
             </div>
@@ -88,7 +96,7 @@
             <div class="card">
               <div class="card-body">
                 <h5 class="card-title" style="font-size: 15px;">Visits</h5>
-                <p class="card-text">10</p>
+                <p class="card-text"><?php echo $visitation ?></p>
                 <a href="#" class="btn" style="width: 100%; background: rgb(31, 27, 46); color: white;">View</a>
               </div>
             </div>

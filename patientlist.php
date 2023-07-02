@@ -1,10 +1,16 @@
+<?php
+session_start();
+require("dbconn.php");
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Medical Record</title>
+    <title>Patient list</title>
     <link rel="icon" href="img/logo2.png" type="image/x-icon">
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <script src="assets/js/bootstrap.min.js"></script>
@@ -28,19 +34,19 @@
         </div>
 
         <div class="list-group list-group-flush my-3">
-            <a href="#" class="list-group-item list-group-item-action bg-transparent second-text active text-white" >
+            <a href="dashboard.php" class="list-group-item list-group-item-action bg-transparent second-text active text-white" >
                 <i class="fas fa-tachometer-alt me-2"></i>Dashboard
             </a>
-            <a href="#" class="list-group-item list-group-item-action bg-transparent second-text active text-white" >
+            <a href="addpatient.php" class="list-group-item list-group-item-action bg-transparent second-text active text-white" >
             <i class="fas fa-plus me-2"></i>Add Patient
             </a>
-            <a href="patientlist.html" class="list-group-item list-group-item-action bg-transparent second-text fw-bold text-white">
+            <a href="patientlist.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold text-white">
             <i class="fas fa-list me-2"></i>Patient List
             </a>
-            <a href="medhistory.html" class="list-group-item list-group-item-action bg-transparent second-text fw-bold text-white">
+            <a href="medhistory.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold text-white">
                 <i class="fas fa-chart-line me-2"></i>Medical History
             </a>
-            <a href="" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold">
+            <a href="logout.php" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold">
                 <i class="fas fa-project-diagram me-2"></i>Log out
             </a>
         </div>
@@ -55,14 +61,15 @@
                 <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
                 <h2 class="fs-2 m-0">Hi Doc</h2>
             </div>
+            
 
         </nav>
-
-        <!--After the dashboard nav-->
-        <div  style="color: red; font-weight: bolder; margin-left: 2%;">
-            <p>Medical History</p>
+        <div style="color: red; font-weight: bolder; margin-left: 2%;">
+            <p>Patitent List</p>
         </div>
         
+        <!--After the dashboard nav-->
+
         <div class="table-responsive ms-4">
             <table class="table mt-3">
                 <thead style="background-color: rgb(31, 27, 46); color: white;">
@@ -71,35 +78,39 @@
                     <th scope="col">Patient Name</th>
                     <th scope="col">Address</th>
                     <th scope="col">Gender</th>
-                    <th scope="col">View</th>
+                    <th scope="col">Date of birth</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
                   </tr>
                 </thead>
                 <tbody>
+                <?php
+                    $query = "SELECT * FROM `patient`";
+                    $result = mysqli_query($con, $query);
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        $id = $row['id'];
+                        $patientname = $row['firstname'].' '.$row['lastname'];
+                        $address = $row['homeaddress'];
+                        $gender = $row['gender'];
+                        $dob = $row['dob'];
+                    
+                    ?>
                   <tr>
-                    <th scope="row">1</th>
-                    <td>Mitchell</td>
-                    <td>lagos</td>
-                    <td>Female</td>
-                    <td><a href="medreport.html">View</a></td>
+                    <th scope="row"><?php echo $id ?></th>
+                    <td><?php echo $patientname ?></td>
+                    <td><?php echo $address ?></td>
+                    <td><?php echo $gender ?></td>
+                    <td><?php echo $dob ?></td>
+                    <td><a href="editpatient.php?id=<?php echo $id ?>">Edit</a></td>
+                    <td><a href="delete.php?id=<?php echo $id ?>&from=patient">Delete</a></td>
                   </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Mark</td>
-                    <td>lagos</td>
-                    <td>Male</td>
-                    <td><a href="medreport.html">View</a></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>Magret</td>
-                    <td>lagos</td>
-                    <td>Female</td>
-                    <td><a href="medreport.html">View</a></td>
-                  </tr>
+                  <?php 
+                  }
+                  ?>
                 </tbody>
               </table>
         </div>
-
+        
     </div>
 
 
