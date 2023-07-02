@@ -70,6 +70,10 @@ require("dbconn.php");
         <p>Medical Report</p>
       </div>
 
+      <div style="width: 100%; border:;">
+        <a href=""><button class="btn btn-primary ms-4" style=" ";>Add Now</button></a>
+      </div>
+
       <div class="table-responsive ms-4">
         <table class="table mt-3">
           <thead style="background-color: rgb(31, 27, 46); color: white;">
@@ -109,7 +113,9 @@ require("dbconn.php");
               <th scope="col">Date Of Visit</th>
               <th scope="col">Time Of Visit</th>
               <th scope="col">Reason</th>
-              <td>Action</td>
+              <th>Delete</th>
+              <th>Edit</th>
+              <th>View</th>
             </tr>
           </thead>
           <tbody>
@@ -129,7 +135,9 @@ require("dbconn.php");
                   <th scope="row"><?php echo $dateofvisit ?></th>
                   <td><?php echo $timeofvisit ?></td>
                   <td><?php echo $reason ?></td>
-                  <td><a href="">ADD</a></td>
+                  <td><a href="">Delete</a></td>
+                  <td><a href="">Edit</a></td>
+                  <td><a href="">View</a></td>
                 </tr>
             <?php
               }
