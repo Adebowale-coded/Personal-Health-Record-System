@@ -71,7 +71,7 @@ require("dbconn.php");
       </div>
 
       <div style="width: 100%; border:;">
-        <a href=""><button class="btn btn-primary ms-4" style=" ";>Add Now</button></a>
+        <a href="addnew.html"><button class="btn btn-primary ms-4" style=" ";>Add Now</button></a>
       </div>
 
       <div class="table-responsive ms-4">
