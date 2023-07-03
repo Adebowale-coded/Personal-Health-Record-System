@@ -35,6 +35,8 @@ if (isset($_POST['login'])) {
     <link rel="icon" href="img/logo2.png" type="image/x-icon">
     <link href="asset2/css/bootstrap.min.css" rel="stylesheet">
     <link href="asset/css/bootstrap.min.css" rel="stylesheet">
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="asset2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/log.css">
     <title>Log in</title>
 </head>
