@@ -1,36 +1,7 @@
 <?php
 session_start();
 require("dbconn.php");
-if (isset($_POST['submit'])) {
 
-
-
-  $firstname = $_POST['firstname'];
-  $lastname = $_POST['lastname'];
-  $email = $_POST['email'];
-  $gender = $_POST['gender'];
-  $dob = $_POST['dob'];
-  $occupation = $_POST['occupation'];
-  $bloodgroup = $_POST['bloodgroup'];
-  $maritalstatus = $_POST['maritalstatus'];
-  $homeaddress = $_POST['homeaddress'];
-  $currentaddress = $_POST['currentaddress'];
-  $country = $_POST['country'];
-  $state = $_POST['state'];
-  $city = $_POST['city'];
-  $contact = $_POST['contact'];
-  $ethnicity = $_POST['ethnicity'];
-
-
-  mysqli_query($con, "INSERT INTO `patient`(`firstname`, `lastname`, `email`, `gender`, `dob`, `occupation`, `bloodgroup`, `maritalstatus`, `homeaddress`, `currentaddress`, `country`, `state`, `city`, `contact`, `ethnicity`)
-   VALUES('$firstname','$lastname','$email','$gender','$dob','$occupation','$bloodgroup','$maritalstatus','$homeaddress', '$currentaddress','$country','$state',' $city','$contact','$ethnicity')");
-?>
-  <script>
-    alert("Patient Added");
-    window.location.href = 'addpatient.php';
-  </script>
-<?php
-}
 
 if (isset($_POST['editsubmit'])) {
   $id = $_GET['id'];

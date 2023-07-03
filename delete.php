@@ -18,10 +18,12 @@ if ($result) {
             ?>
             window.location.href='patientlist.php'
             <?php
-        }else {
+        }elseif($from == 'medreport') {
             ?>
-            window.location.href='prescription.php'
+            window.location.href=history.back()
             <?php
+        }else{
+
         }
        ?>
     </script>

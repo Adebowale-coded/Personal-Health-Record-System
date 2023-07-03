@@ -70,8 +70,20 @@ require("dbconn.php");
         <p>Medical Report</p>
       </div>
 
-      <div style="width: 100%; border:;">
-        <a href="addnew.html"><button class="btn btn-primary ms-4" style=" ";>Add Now</button></a>
+      <?php
+      $id = $_GET['patientid'];
+      $query = "SELECT * FROM `patient` where `id` = $id";
+      $result = mysqli_query($con, $query);
+      $row = mysqli_fetch_assoc($result);
+      $patientname = $row['firstname'] . ' ' . $row['lastname'];
+      $address = $row['homeaddress'];
+      $gender = $row['gender'];
+      $dob = $row['dob'];
+
+      ?>
+
+      <div style="width: 100%;">
+        <a href="addnew.php?patientid=<?php echo $id; ?>"><button class="btn btn-primary ms-4">Add Now</button></a>
       </div>
 
       <div class="table-responsive ms-4">
@@ -85,17 +97,7 @@ require("dbconn.php");
             </tr>
           </thead>
           <tbody>
-            <?php
-            $id = $_GET['patientid'];
-            $query = "SELECT * FROM `patient` where `id` = $id";
-            $result = mysqli_query($con, $query);
-            $row = mysqli_fetch_assoc($result);
-            $patientname = $row['firstname'] . ' ' . $row['lastname'];
-            $address = $row['homeaddress'];
-            $gender = $row['gender'];
-            $dob = $row['dob'];
 
-            ?>
             <tr>
               <td><?php echo $patientname ?></td>
               <td><?php echo $address ?></td>
@@ -125,9 +127,10 @@ require("dbconn.php");
             $result1 = mysqli_query($con, $query1);
             if (mysqli_num_rows($result1) > 0) {
               while ($row1 = mysqli_fetch_assoc($result1)) {
-                $dateofvisit = $row['dateofvisit'];
-                $timeofvisit = $row['timeofvisit'];
-                $reason = $row['reason'];
+                $medid = $row1['id'];
+                $dateofvisit = $row1['dateofvisit'];
+                $timeofvisit = $row1['timeofvisit'];
+                $reason = $row1['reason'];
 
 
             ?>
@@ -135,19 +138,21 @@ require("dbconn.php");
                   <th scope="row"><?php echo $dateofvisit ?></th>
                   <td><?php echo $timeofvisit ?></td>
                   <td><?php echo $reason ?></td>
-                  <td><a href="">Delete</a></td>
-                  <td><a href="">Edit</a></td>
+                  <td><a href="delete.php?from=medreport&id=<?php echo $medid ?>">Delete</a></td>
+                  <td><a href="editreport.php?patientid=<?php echo $id ?>&id=<?php echo $medid ?>">Edit</a></td>
                   <td><a href="">View</a></td>
                 </tr>
-            <?php
+              <?php
               }
             } else {
               ?>
               <tr>
-                <td><p>No record found</p></td>
+                <td>
+                  <p>No record found</p>
+                </td>
               </tr>
-              
-              <?php
+
+            <?php
             }
             ?>
           </tbody>
