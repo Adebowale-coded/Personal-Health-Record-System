@@ -14,9 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="font-6/css/all.css">
-    <link rel="stylesheet" href="css/dashboard.css">
-
-    
+    <link rel="stylesheet" href="css/dashboard.css">   
 </head>
 <body>
     <div class="d-flex" id="wrapper">
@@ -60,52 +58,50 @@
             <p>Medical Report</p>
         </div>
 
-        <div class="row" style=" margin: 0 auto; text-align: center; width: 100%;">
-            <div class="col-sm-4" style=" ">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title" style="font-size: 15px;">Appointment</h5>
-                  <p class="card-text">20</p>
-                  <a href="" class="btn" style="width: 100%; background: rgb(31, 27, 46); color: white;">View</a>
-                </div>
-              </div>
+        <form class="container flex-column mt-5 ms-2" style="width: 100%;" method="post">
+        <div class="container flex-column " style="width: 100%;">
+            <div class="heading mb-3" style=" color: white; font-size: 10px;">
+              <h5>Book Appointment</h5>
             </div>
-            <div class="col-sm-4" style="">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title" style="font-size: 15px; font-weight: bolder;">Prescription</h5>
-                  <p class="card-text">22</p>
-                  <a href="#" class="btn" style="width: 100%; background: rgb(31, 27, 46); color: white;">View</a>
-                </div>
-              </div>
+            <div class="mb-3">
+              <label class="form-label">Name</label>
+              <input type="text" class="form-control" name="gender" required>
             </div>
-            <div class="col-sm-4" style="">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title" style="font-size: 15px;">Visits</h5>
-                  <p class="card-text">29</p>
-                  <a href="#" class="btn" style="width: 100%; background: rgb(31, 27, 46); color: white;">View</a>
-                </div>
-              </div>
+            <div class="mb-3">
+              <label class="form-label">Doctor Name</label>
+              <input type="text" class="form-control" name="docname" placeholder="" required>
             </div>
-          </div>
-      </div>
-        
-        <!--<div class="table-responsive ms-4">
-            <table class="table mt-3">
-                <thead style="background-color: rgb(31, 27, 46); color: white;">
-                    <tr>
-                        <th scope="col">S/N</th>
-                        <th scope="col">Patient Name</th>
-                        <th scope="col">Address</th>
-                        <th scope="col">Gender</th>
-                        <th scope="col">View</th>
-                    </tr>
-                </thead>
-            </table>
-        </div>-->
 
-    </div>
+            <div class="mb-3 row">
+                <div class="col">
+                    <label class="form-label">Date</label>
+                    <input type="date" class="form-control" name="date" placeholder="Date" required>
+                </div>
+                <div class="col">
+                    <label class="form-label">Time</label>
+                    <input type="time" class="form-control" name="time" placeholder="Time" required>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Description</label>
+                <input type="text" class="form-control" name="description" placeholder="" required>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Status</label>
+                <select class="form-control" name="" id="">
+                    <option value="">Scheduled</option>
+                    <option value="">Missed Appointment</option>
+                    <option value="">In Progress</option>
+                    <option value="">Signed In</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-primary" name="submit">Book Now</button>
+            </div>
+        </form>
+
+            
         
 
     </div>
