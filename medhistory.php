@@ -44,7 +44,7 @@ require("dbconn.php");
                 <a href="patientlist.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold text-white">
                     <i class="fas fa-list me-2"></i>Patient List
                 </a>
-                <a href="" class="list-group-item list-group-item-action bg-transparent second-text fw-bold text-white">
+                <a href="bookappoint.html" class="list-group-item list-group-item-action bg-transparent second-text fw-bold text-white">
                 <i class="fas fa-paperclip me-2"></i> Book Apointment
                 </a>
                 <a href="medhistory.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold text-white">

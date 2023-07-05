@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome Patient</title>
+    <title>Book Appointment</title>
     <link rel="icon" href="img/logo2.png" type="image/x-icon">
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <script src="assets/js/bootstrap.min.js"></script>
@@ -21,34 +21,39 @@
 
         <div class="text-white" id="sidebar-wrapper" style="background: rgb(31, 27, 46);">
 
-        <div class="sidebar-heading text-center py-4  fs-4 fw-bold ">
-            <label class="fw-light" style="color: rgb(255, 1, 234); font-weight: bold; font-family: poppins;">Personal</label> HRS
+            <div class="sidebar-heading text-center py-4  fs-4 fw-bold ">
+                <label class="fw-light" style="color: rgb(255, 1, 234); font-weight: bold; font-family: poppins;">Personal</label> HRS
+            </div>
+
+            <div class="list-group list-group-flush my-3">
+                <a href="dashboard.php" class="list-group-item list-group-item-action bg-transparent second-text active text-white">
+                    <i class="fas fa-tachometer-alt me-2"></i>Dashboard
+                </a>
+                <a href="addpatient.php" class="list-group-item list-group-item-action bg-transparent second-text active text-white">
+                    <i class="fas fa-plus me-2"></i>Add Patient
+                </a>
+                <a href="patientlist.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold text-white">
+                    <i class="fas fa-list me-2"></i>Patient List
+                </a>
+                <a href="bookappoint.html" class="list-group-item list-group-item-action bg-transparent second-text fw-bold text-white">
+                <i class="fas fa-paperclip me-2"></i> Book Apointment
+                </a>
+                <a href="medhistory.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold text-white">
+                    <i class="fas fa-chart-line me-2"></i>Medical History
+                </a>
+                <a href="logout.php" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold">
+                    <i class="fas fa-project-diagram me-2"></i>Log out
+                </a>
+            </div>
+
         </div>
-
-        <div class="list-group list-group-flush my-3">
-            <a href="patientdash.html" class="list-group-item list-group-item-action bg-transparent second-text active text-white" >
-                <i class="fas fa-tachometer-alt me-2"></i>Dashboard
-            </a>
-            <a href="bookappoint.html" class="list-group-item list-group-item-action bg-transparent second-text fw-bold text-white">
-              <i class="fas fa-paperclip me-2"></i> Book Apointment
-            </a>
-            <a href="patientdash.html" class="list-group-item list-group-item-action bg-transparent second-text fw-bold text-white">
-                <i class="fas fa-chart-line me-2"></i>Medical Report
-            </a>
-            <a href="signup.php" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold">
-                <i class="fas fa-project-diagram me-2"></i>Log out
-            </a>
-        </div>
-
-    </div>
-
 
     <div id="page-content-wrapper">
 
         <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
             <div class="d-flex align-items-center">
                 <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
-                <h2 class="fs-2 m-0">Hi Patient</h2>
+                <h2 class="fs-2 m-0">Hi Doc</h2>
             </div>
 
         </nav>
