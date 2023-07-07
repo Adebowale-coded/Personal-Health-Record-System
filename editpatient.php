@@ -70,13 +70,13 @@ if (isset($_POST['editsubmit'])) {
         <a href="#" class="list-group-item list-group-item-action bg-transparent second-text active text-white">
           <i class="fas fa-plus me-2"></i>Add Patient
         </a>
-        <a href="patientlist.html" class="list-group-item list-group-item-action bg-transparent second-text fw-bold text-white">
+        <a href="patientlist.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold text-white">
           <i class="fas fa-list me-2"></i>Patient List
         </a>
         <a href="" class="list-group-item list-group-item-action bg-transparent second-text fw-bold text-white">
                 <i class="fas fa-paperclip me-2"></i> Book Apointment
             </a>
-        <a href="medhistory.html" class="list-group-item list-group-item-action bg-transparent second-text fw-bold text-white">
+        <a href="medhistory.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold text-white">
           <i class="fas fa-chart-line me-2"></i>Medical History
         </a>
         <a href="" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold">

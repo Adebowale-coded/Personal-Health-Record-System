@@ -3,21 +3,27 @@ session_start();
 if (isset($_POST['login'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
+    $member = $_POST['member'];
 
     require("dbconn.php");
 
 
-    $result = mysqli_query($con, "SELECT * FROM `users` WHERE email='$email' and password='$password'");
+    $result = mysqli_query($con, "SELECT * FROM `$member` WHERE email='$email' and password='$password'");
     if (mysqli_num_rows($result)) {
         $res = mysqli_fetch_array($result);
         $_SESSION['name'] = $res['fullname'];
         $_SESSION['email'] = $res['email'];
-        header("Location: dashboard.php");
+        if($member == 'doctor'){
+            header("Location: dashboard.php");
+        }else {
+            header("Location: patientdash.php");
+        }
+        
     } else {
 ?>
         <script>
             alert("No username found !")
-            window.location.href = "login.php"
+            window.location.href = "index.php"
         </script>
 <?php
     }
@@ -74,8 +80,15 @@ if (isset($_POST['login'])) {
                         <div class="input-group mb-3">
                             <input type="text" name="email" class="form-control form-control-lg bg-light fs-6" placeholder="Email address" required>
                         </div>
-                        <div class="input-group mb-1">
+                        <div class="input-group mb-3">
                             <input type="password" name="password" class="form-control form-control-lg bg-light fs-6" placeholder="Password" required>
+                        </div>
+                        <div class="input-group mb-3">
+                            <select class="form-control form-control-lg bg-light fs-6" name="member">
+                                <option value="" hidden>Select member type</option>
+                                <option value="doctor">Doctor</option>
+                                <option value="patient">Patient</option>
+                            </select>
                         </div>
                         <div class="input-group mb-5 d-flex justify-content-between">
 
@@ -84,7 +97,7 @@ if (isset($_POST['login'])) {
                             </div>
                         </div>
                         <div class="input-group mb-3">
-                            <button class="btn btn-lg  w-100 fs-6" style="background: rgb(20, 14, 50); color: white;"type="submit" name='login'>Login</button>
+                            <button class="btn btn-lg  w-100 fs-6" style="background: rgb(20, 14, 50); color: white;" type="submit" name='login'>Login</button>
                         </div>
                     </form>
 

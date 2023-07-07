@@ -4,11 +4,29 @@ require("dbconn.php");
 
 if (isset($_POST['submit'])) {
 
+  $id = $_GET['id'];
+  $dateofvisit = $_POST['dateofvisit'];
+  $timeofvisit = $_POST['timeofvisit'];
+  $reason = $_POST['reason'];
+  $bpsystolic = $_POST['bpsystolic'];
+  $bpdestolic = $_POST['bpdestolic'];
+  $temperature = $_POST['temperature'];
+  $pulse = $_POST['pulse'];
+  $respiratoryrate = $_POST['respiratoryrate'];
+  $weight = $_POST['weight'];
+  $height = $_POST['height'];
+  $symptomname = $_POST['symptomname'];
+  $symptom = $_POST['symptom'];
+  $diagnosticsname = $_POST['diagnosticsname'];
+  $diagnostics = $_POST['diagnostics'];
+  $drugname = $_POST['drugname'];
+  $strength = $_POST['strength'];
+  $directionsforuse = $_POST['directionsforuse'];
+  $quantity = $_POST['quantity'];
+  $treatmantdetails = $_POST['treatmantdetails'];
+  $doctorreport = $_POST['doctorreport'];
 
-
-
-  mysqli_query($con, "INSERT INTO `medreport`(`patientid`,`dateofvisit`, `timeofvisit`, `reason`, `bpsystolic`, `bpdestolic`, `temperature`, `pulse`, `respiratoryrate`, `weight`, `height`, `symptomname`, `symptom`, `diagnosticsname`, `diagnostics`, `drugname`, `strength`, `directionsforuse`, `quantity`, `treatmantdetails`, `doctorreport`)
-   VALUES('$id','$dateofvisit','$timeofvisit','$reason','$bpsystolic','$bpdestolic','$temperature','$pulse','$respiratoryrate','$weight', '$height','$symptomname','$symptom',' $diagnosticsname','$diagnostics','$drugname','$strength','$directionsforuse','$quantity','$treatmantdetails','$doctorreport')");
+  mysqli_query($con, "UPDATE `medreport` SET `dateofvisit`='$dateofvisit',`timeofvisit`='$timeofvisit',`reason`='$reason',`bpsystolic`='$bpsystolic',`bpdestolic`='$bpdestolic',`temperature`='$temperature',`pulse`='$pulse',`respiratoryrate`='$respiratoryrate',`weight`='$weight',`height`='$height',`symptomname`='$symptomname',`symptom`='$symptom',`diagnosticsname`='$diagnosticsname',`diagnostics`='$diagnostics',`drugname`='$drugname',`strength`='$strength',`directionsforuse`='$directionsforuse',`quantity`='$quantity',`treatmantdetails`='$treatmantdetails',`doctorreport`='$doctorreport' WHERE `id` = $id");
 
 ?>
 
